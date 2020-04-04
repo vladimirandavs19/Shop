@@ -10,6 +10,7 @@ namespace Shop.Web.Data.Entities
     {
         public int Id { get; set; }
         
+        [MaxLength(100, ErrorMessage ="Field {0} must be {1} length")]
         [Required]
         public string Name { get; set; }
         
@@ -20,10 +21,10 @@ namespace Shop.Web.Data.Entities
         public string ImageUrl { get; set; }
         
         [Display(Name = "Last Purchase")]
-        public DateTime LastPurchase { get; set; }
+        public Nullable<DateTime> LastPurchase { get; set; }
         
         [Display(Name = "Last Sale")]
-        public DateTime LastSale { get; set; }
+        public Nullable<DateTime> LastSale { get; set; }
         
         [Display(Name = "Is Available?")]
         public bool IsAvailable { get; set; }
