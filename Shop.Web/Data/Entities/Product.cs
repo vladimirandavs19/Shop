@@ -30,5 +30,20 @@ namespace Shop.Web.Data.Entities
         public double Stock { get; set; }
 
         public User User { get; set; }
+
+        public string FullPathUrl
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(ImageUrl))
+                {
+                    return null;
+                }
+                else
+                {
+                    return $"https://shopcanasta.azurewebsites.net{this.ImageUrl.Substring(1)}";
+                }
+            }
+        }
     }
 }
